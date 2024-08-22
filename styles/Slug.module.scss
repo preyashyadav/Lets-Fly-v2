@@ -1,0 +1,400 @@
+$primary-color: #ff7800;
+$secondary-color: #131313;
+$background-color: #fff;
+$font-family: "Lato", sans-serif;
+
+.primary_color{
+  color: $primary-color !important;
+}
+
+.container {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+
+  .trip_card {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    overflow: hidden !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+.flight_section_wrap {
+  margin: 70px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.trip_controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0;
+  font-family: $font-family;
+  background-color: $background-color;
+  margin: 15px 0;
+
+  .button {
+    height: 25px;
+    padding: 1rem !important;
+    display: inline-flex;
+    background-color: $primary-color;
+    color: $background-color;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 14px;
+    display: flex;
+    cursor: pointer;
+    padding: 0 10px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.trip_title {
+  padding: 5px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  font-family: $font-family;
+  background-color: $primary-color;
+  color: $background-color;
+
+  .title {
+    flex-grow: 9;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .pnr {
+    flex-grow: 1;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
+
+.plane_line {
+  display: flex;
+  width: 100%;
+  color: $primary-color;
+  box-sizing: border-box;
+  align-items: center;
+  margin: 0 10px;
+
+  div {
+    display: inline-flex;
+    flex-grow: 1;
+  }
+
+  .line {
+    margin: 0px;
+    height: 0px;
+    border-top: 1px solid $primary-color;
+  }
+
+  .plane {
+    margin: 0 10px 0 10px;
+  }
+
+  .flight_duration {
+    margin: 0 10px 0 0;
+    display: inline-flex;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+}
+
+.layover_line {
+  display: flex;
+  width: 100%;
+  color: $primary-color;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 10px;
+  box-sizing: bocer-box;
+
+  div {
+    display: inline-flex;
+    flex-grow: 1;
+  }
+
+  .line {
+    margin: 0px;
+    height: 0px;
+    border-top: 2px dotted $primary-color;
+  }
+
+  .layover_time {
+    .time {
+      margin: 0 5px;
+      font-family: $font-family;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.layover_line.alt {
+  display: flex;
+  font-size: 14px;
+  line-height: 14px;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $primary-color;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 28px;
+
+  div {
+    display: inline-flex;
+    flex-grow: 1;
+  }
+
+  .layover_time {
+    .time {
+      margin: 0 5px;
+      font-family: $font-family;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.source_destination {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 20px 10px 10px 10px;
+  box-sizing: border-box;
+
+  .city_to_city {
+    margin: 6px 0;
+    display: inline-flex;
+    flex-direction: row;
+    font-family: $font-family;
+    width: 100%;
+    align-items: flex-start;
+
+    .full_name {
+      flex-grow: 1;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+  }
+
+  .takeoff_land_time {
+    font-family: $font-family;
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .date_time {
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+
+      @media (max-width: 450px) {
+        flex-direction: column;
+
+        .time,
+        .date {
+          text-align: right;
+          width: 100%;
+        }
+
+        &:first-child {
+
+          .time,
+          .date {
+            text-align: left;
+            width: 100%;
+          }
+        }
+      }
+
+      .separator {
+        margin: 0 5px;
+
+        @media (max-width: 450px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.flight_duration {
+  display: none;
+  font-family: $font-family;
+
+  @media (max-width: 640px) {
+    display: block;
+  }
+}
+
+.city_to_city_menu {
+  font-family: $font-family;
+  width: 100%;
+  margin-top: 20px;
+
+  .menu_items {
+    display: flex;
+    flex-direction: row;
+
+    .menu_item {
+      display: inline-flex;
+      flex-grow: 1;
+      text-transform: uppercase;
+      justify-content: center;
+      max-width: 200px;
+      padding: 2px 0;
+      border: 1px solid $secondary-color;
+
+      @media (min-width: 640px) {
+        border-bottom: 0;
+      }
+
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      border-collapse: collapse;
+      cursor: pointer;
+
+      &.active {
+        background-color: $primary-color;
+        color: $background-color;
+      }
+    }
+  }
+
+  .menu_content {
+    @media (min-width: 640px) {
+      border-top: 1px solid $secondary-color;
+      border-top-right-radius: 8px;
+    }
+
+    border-left: 1px solid $secondary-color;
+    border-right: 1px solid $secondary-color;
+    border-bottom: 1px solid $secondary-color;
+    background-color: $secondary-color;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+.passengers {
+  display: flex;
+  flex-direction: column;
+
+  .passenger {
+    padding: 5px 10px;
+    border-top: 1px solid $background-color;
+    color: $primary-color;
+    justify-content: space-between;
+    display: flex;
+
+    &:first-child {
+      border-top: 0;
+    }
+
+    .passenger_name {
+      display: inline-flex;
+      flex-grow: 1;
+    }
+
+    .passenger_seat {
+      display: inline-flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+
+    .passenger_meal {
+      display: inline-flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .controls {
+      display: inline-flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+
+      .button {
+        display: flex;
+        background-color: $primary-color;
+        color: $background-color;
+        text-transform: uppercase;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 14px;
+        display: flex;
+        cursor: pointer;
+        width: 100px;
+
+        span {
+          display: flex;
+          height: 25px;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.expand_collapse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .expand_collapse_line {
+    width: 100%;
+    height: 0;
+    border-top: 1px solid $secondary-color;
+    margin-bottom: 10px;
+  }
+
+  .expand_collapse_control {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .expand_collapse_text {
+      display: inline-flex;
+      font-family: $font-family;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+  }
+}
